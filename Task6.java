@@ -1,34 +1,35 @@
-package com.Week1;
+package com.Week3;
+/*Create a program that asks the user to
+input words until the user gives the same word twice. Use an ArrayList structure in your program.*/
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Scanner;
 
-/* 6. Create a program that asks the user for two numbers and prints the greater of those two.
-The program should also handle the case in which the two numbers are equal.*/
-
 public class Task6 {
+
     public static void main(String[] args) {
-        System.out.println("Check which number is greater.");
-
+        ArrayList<String> words = new ArrayList<String>();
         Scanner reader = new Scanner(System.in);
+        while (true) {
+            System.out.println("Add elements to the list: ");
+            String element = reader.nextLine();
+            words.add(element);
 
-        System.err.println("Enter the first number: ");
-        int numberOne = Integer.parseInt(reader.nextLine());
-
-        System.err.println("Enter the second number: ");
-        int numberTwo = Integer.parseInt(reader.nextLine());
-
-        System.out.println("The first number is " + numberOne + ".");
-        System.out.println("The second number is  " + numberTwo + ".");
-
-        if(numberOne> numberTwo){
-            System.out.println("Number " + numberOne + "is greater than " + numberTwo + "." );
+            if (Collections.frequency(words, element) >= 2) {
+                System.out.println("You gave the word " + element + " twice.");
+                break;
+            }
         }
-        else if( numberOne == numberTwo){
-            System.out.println("Numbers are equal. Numbers are " + numberOne + " and " + numberTwo + ".");
-        }
-        else { //ovdje moze i else if na kraju i nece biti problema
-            System.out.println("Number " + numberTwo + " is bigger than " + numberOne + ".");
+        Collections.sort(words);
+        int i = 1;
+        System.out.println("\nElements of the list in the alphabetical order: ");
+        for (String individual : words) {
+                System.out.println(i + ". element of the list is: " + individual);
+                i++;
+            }
+
         }
 
     }
-}
+

@@ -1,11 +1,17 @@
-package com.Week1;
+package com.Week3;
 
-//2. Create a program that prints out the following:
+import java.util.Scanner;
+
+/*T2: Create a program that asks for the user's
+ name and says how many characters the name contains.
+ */
 public class Task2 {
     public static void main(String[] args) {
-        System.err.println("Hello world!\n(And all people of the world)");
-
+        Scanner reader = new Scanner(System.in);
+        System.out.println("Enter the name: ");
+        String name = reader.nextLine();
+        int length = name.length();
+        System.out.println("The number of characters is: " + length);
+        //ili samo System.out.println("The number of characters" + name.length());
     }
-
 }
-//kad stavimo System.err.println onda ce isprintat u crvenom

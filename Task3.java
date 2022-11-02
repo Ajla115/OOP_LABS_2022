@@ -1,13 +1,28 @@
-package com.Week1;
-/* 3. Create a program that counts how many seconds there are in a year.
-You can assume that a year consists of 365 days
-(therefore the year is not a leap year).*/
+package com.Week3;
+import java.util.Scanner;
+
+/*T3:Create a program that asks for the user's
+name and gives its characters separately.
+You do not need to create methods in this exercise.
+ */
 public class Task3 {
     public static void main(String[] args) {
-        int days = 365;
-        int seconds = days * 24 * 60 * 60;
-        System.out.println("There are " + seconds + " seconds in a year.");
+        Scanner reader = new Scanner(System.in);
+        System.out.println("Enter the name: ");
+        String name = reader.nextLine();
+        int counter = 0;
+        int size = name.length()-1;
+        //don't forget -1 in order to reach the last index, length() is always longer for one number of character which does not exist while indexing
+        int i = 0;
+        while (i <= size) {
+            counter++;
+            System.out.println(counter + ". character: " + name.charAt(i));
+            i++;
+        }
     }
-
 }
-//uvijek koristiti camelCase, a ne npr number_of_seconds, vec numberOfSeconds
+
+/*for(int i = 0; i < name.length() - 1 ; i++){
+    System.out.println((i+1) + "character" + name.charAt(i));
+        }*/
+
